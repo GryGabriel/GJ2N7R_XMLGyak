@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table tr td {
+    padding: 5px 20px;
+}
+
+table tr td, table tr th {
+    border: 1px solid white;
+}

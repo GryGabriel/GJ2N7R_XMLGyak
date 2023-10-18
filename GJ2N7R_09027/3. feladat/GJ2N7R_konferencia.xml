@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<konferencia>
+
+    <cim>Felhőalapú alkalmazások készítése</cim>
+    
+    <hallgatok>
+        <hallgato>
+            <nev>Kis Péter</nev>
+            <lakcim>Budapest, Kazinczy utca 5.</lakcim>
+        </hallgato>
+        <hallgato>
+            <nev>Nagy Áron</nev>
+            <lakcim>Debrecen, Templom utca 21.</lakcim>
+        </hallgato>
+        <hallgato>
+            <nev>Közepes Sándor</nev>
+            <lakcim>Miskolc, Egyetem út 1</lakcim>
+        </hallgato>
+    </hallgatok>
+    
+    <helyszin>Miskolci egyetem, XXXII.</helyszin>
+    
+    <eloado>
+        <nev>Szeles Dénes</nev>
+        <lakcim>Szentes, Király utca 1.</lakcim>
+        <adoszam>7182659872</adoszam>
+    </eloado>
+    
+    <datum>2023.11.23.</datum>
+
+</konferencia>

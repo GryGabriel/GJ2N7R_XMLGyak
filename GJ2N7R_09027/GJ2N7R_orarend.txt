@@ -1,0 +1,13 @@
+<gj2n7r_orarend>
+    <ora id="" type="">
+        <kurzus_nev></kurzus_nev>
+        <szak></szak>
+        <oktato></oktato>
+        <idopont>
+            <nap></nap>
+            <kezdet></kezdet>
+            <veg></veg>
+        </idopont>
+        <helyszin></helyszin>
+    </ora>
+</gj2n7r_orarend>
