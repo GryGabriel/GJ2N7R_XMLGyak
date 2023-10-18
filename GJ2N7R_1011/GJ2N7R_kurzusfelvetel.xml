@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GJ2N7R_kurzusfelvetel tanev="2023/24 I" egyetemNeve="ME"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:noNamespaceSchemaLocation="GJ2N7R_kurzusfelvetel.xsd">
+
+    <hallgato>
+        <hnev>Garay Gabriel</hnev>
+        <szulev>2000</szulev>
+        <szak evf="3">Programtervező informatikus</szak>
+    </hallgato>
+
+    <kurzusok>
+        <kurzus id="GEIAL331-B">
+            <kurzusnev>Web technológiák 1</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXX A1 III. em. 305</hely>
+            <idopont>Hétfő 14:00-16:00</idopont>
+            <oktato>Agárdi Anita</oktato>
+        </kurzus>
+
+        <kurzus id="GEMAK232-B">
+            <kurzusnev>Valószínűség-számítás</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1 320</hely>
+            <idopont>Hétfő 10:00-12:00</idopont>
+            <oktato>Dr. Fegyverneki Sándor</oktato>
+        </kurzus>
+
+        <kurzus id="GEIAK130-B">
+            <kurzusnev>Mesterséges intelligencia alapok</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. A1 magasfsz.</hely>
+            <idopont>Kedd 10:00-12:00</idopont>
+            <oktato>Fazekas Levente</oktato>
+        </kurzus>
+
+        <kurzus id="GEIAL315-B" jovahagyva="igen">
+            <kurzusnev>Vállalati információs rendszerek fejlesztése</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf. 101</hely>
+            <idopont>Szerda 14:00-16:00</idopont>
+            <oktato>Dr. Sasvári Péter László</oktato>
+        </kurzus>
+    </kurzusok>
+</GJ2N7R_kurzusfelvetel>
