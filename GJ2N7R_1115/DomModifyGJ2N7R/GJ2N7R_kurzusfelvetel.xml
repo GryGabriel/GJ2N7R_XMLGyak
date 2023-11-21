@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<GJ2N7R_kurzusfelvetel egyetemNeve="ME" tanev="2023/24 I">
+    <hallgato evf="3">
+        <hnev>Garay Gabriel</hnev>
+        <szulev>2000</szulev>
+        <szak>programtervezö informatikus</szak>
+    </hallgato>
+
+    <kurzusok>
+        <kurzus id="GJ2N7R_ValszE" jóváhagyás="igen">
+            <kurzusnev>Valószínűségszámítás</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/320</hely>
+            <idopont>Hétfö, 10-12</idopont>
+            <oktató>Dr. Fegyverneki Sándor</oktató>
+            <óraadó>1. óraadó</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_ValszGy" jóváhagyás="igen">
+            <kurzusnev>Valószínűségszámítás</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/312</hely>
+            <idopont>Szerda, 10-12</idopont>
+            <oktató>Dr. Fegyverneki Sándor</oktató>
+            <óraadó>2. óraadó</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_MesintE">
+            <kurzusnev>Mesterséges intelligencia</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. elöadó</hely>
+            <idopont>Kedd, 10-12</idopont>
+            <oktató>Kunné Tamás Judit</oktató>
+            <óraadó>Fazekas Levente</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_MesintGy">
+            <kurzusnev>Mesterséges intelligencia</kurzusnev>
+            <kredit>5</kredit>
+            <hely>III. elöadó</hely>
+            <idopont>Csütörtök, 10-12</idopont>
+            <óraadó>Fazekas Levente</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_XMLE">
+            <kurzusnev>Adatkezelés XML környezetben</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. elöadó</hely>
+            <idopont>Kedd, 12-14</idopont>
+            <oktató>Bednarik László</oktató>
+            <óraadó>5. óraadó</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_XMLGy">
+            <kurzusnev>Adatkezelés XML környezetben</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf/101</hely>
+            <idopont>Szerda, 12-14</idopont>
+            <óraadó>Bednarik László</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_AlgE">
+            <kurzusnev>Algoritmusok és vizsgálatuk</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/320</hely>
+            <idopont>Kedd, 14-16</idopont>
+            <oktató>Házy Attila</oktató>
+            <óraadó>7. óraadó</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_AlgGy">
+            <kurzusnev>Algoritmusok és vizsgálatuk</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/320</hely>
+            <idopont>Kedd, 16-18</idopont>
+            <oktató>Házy Attila</oktató>
+            <óraadó>8. óraadó</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_VállE">
+            <kurzusnev>Vállalati információs rendszerek fejlesztése</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf/101</hely>
+            <idopont>Szerda, 14-16</idopont>
+            <oktató>Sasvári Péter</oktató>
+            <óraadó>9. óraadó</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_VállGy">
+            <kurzusnev>Vállalati információs rendszerek fejlesztése</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf/101</hely>
+            <idopont>Szerda, 18-20</idopont>
+            <óraadó>Sasvári Péter</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_WebtE">
+            <kurzusnev>Webtechnológiák</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/305</hely>
+            <idopont>Hétfő, 14-16</idopont>
+            <óraadó>Dr. Agárdi Anita</óraadó>
+        </kurzus>
+
+        <kurzus id="GJ2N7R_WebtGy">
+            <kurzusnev>Webtechnológiák</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/305</hely>
+            <idopont>Hétfő, 16-18</idopont>
+            <óraadó>Dr. Agárdi Anita</óraadó>
+        </kurzus>
+    </kurzusok>
+
+</GJ2N7R_kurzusfelvetel>
