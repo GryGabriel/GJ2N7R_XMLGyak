@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Filmadatbázis xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="../xsd/XMLSchemaGJ2N7R.xsd">
+
+    <!-- Film példányok -->
+    <Film film_id="1">
+        <Cím>Inception</Cím>
+        <Kiadás_éve>2010</Kiadás_éve>
+        <Műfaj>Sci-fi</Műfaj>
+    </Film>
+
+    <Film film_id="2">
+        <Cím>The Shawshank Redemption</Cím>
+        <Kiadás_éve>1994</Kiadás_éve>
+        <Műfaj>Dráma</Műfaj>
+    </Film>
+
+    <Film film_id="3">
+        <Cím>Avatar</Cím>
+        <Kiadás_éve>2009</Kiadás_éve>
+        <Műfaj>Sci-fi</Műfaj>
+    </Film>
+
+    <Film film_id="4">
+        <Cím>The Dark Knight</Cím>
+        <Kiadás_éve>2008</Kiadás_éve>
+        <Műfaj>Akció</Műfaj>
+    </Film>
+
+    <!-- Értékelés példányok -->
+    <Értékelés ertekeles_id="1" film_id="1">
+    <Pontszám>4.8</Pontszám>
+    <Értékelések_száma>1500</Értékelések_száma>
+    <Értékelés_szövege>Nagyon jó film, érdemes megnézni!</Értékelés_szövege>
+    <Értékelés_szövege>Lenyűgöző képi világ!</Értékelés_szövege>
+    <Értékelés_szövege>Remek színészi alakítások!</Értékelés_szövege>
+    </Értékelés>
+
+    <Értékelés ertekeles_id="2" film_id="2">
+        <Pontszám>4.9</Pontszám>
+        <Értékelések_száma>2000</Értékelések_száma>
+        <Értékelés_szövege>Minden idők egyik legjobb filmje!</Értékelés_szövege>
+        <Értékelés_szövege>Nagyon izgalmas történet!</Értékelés_szövege>
+    </Értékelés>
+
+    <Értékelés ertekeles_id="3" film_id="3">
+        <Pontszám>4.5</Pontszám>
+        <Értékelések_száma>1200</Értékelések_száma>
+        <Értékelés_szövege>Varázslatos filmélmény!</Értékelés_szövege>
+        <Értékelés_szövege>Nagyszerű rendezés!</Értékelés_szövege>
+        <Értékelés_szövege>Lenyűgöző látványvilág!</Értékelés_szövege>
+    </Értékelés>
+
+    <Értékelés ertekeles_id="4" film_id="4">
+        <Pontszám>4.7</Pontszám>
+        <Értékelések_száma>1800</Értékelések_száma>
+        <Értékelés_szövege>Nagyon élvezetes film!</Értékelés_szövege>
+        <Értékelés_szövege>Izgalmas cselekmény!</Értékelés_szövege>
+    </Értékelés>
+
+
+    <!-- Kategória példányok -->
+    <Kategória kategoria_id="1">
+        <Kategória_név>Akció</Kategória_név>
+        <Leírás>Izgalmas, pörgős jeleneteket tartalmazó filmek</Leírás>
+    </Kategória>
+
+    <Kategória kategoria_id="2">
+        <Kategória_név>Drama</Kategória_név>
+        <Leírás>Mély érzelmekre épülő filmek</Leírás>
+    </Kategória>
+
+    <Kategória kategoria_id="3">
+        <Kategória_név>Sci-fi</Kategória_név>
+        <Leírás>Fantázia és tudományos elemeket tartalmazó filmek</Leírás>
+    </Kategória>
+
+    <!-- Tartozik kapcsolótábla példányok -->
+    <Tartozik tartozik_id="1" film_id="1" kategoria_id="1">
+        <Kategóriák_száma>2</Kategóriák_száma>
+    </Tartozik>
+
+    <Tartozik tartozik_id="2" film_id="2" kategoria_id="2">
+        <Kategóriák_száma>1</Kategóriák_száma>
+    </Tartozik>
+
+    <Tartozik tartozik_id="3" film_id="3" kategoria_id="3">
+        <Kategóriák_száma>1</Kategóriák_száma>
+    </Tartozik>
+
+    <Tartozik tartozik_id="4" film_id="1" kategoria_id="1">
+        <Kategóriák_száma>2</Kategóriák_száma>
+    </Tartozik>
+
+    <!-- Felhasználó példányok -->
+    <Felhasználó felhasznalo_id="1">
+        <Felhasználónév>user1</Felhasználónév>
+        <Születési_dátum>1985-05-15</Születési_dátum>
+        <Email-cím>user1@example.com</Email-cím>
+    </Felhasználó>
+
+    <Felhasználó felhasznalo_id="2">
+        <Felhasználónév>user2</Felhasználónév>
+        <Születési_dátum>1990-08-22</Születési_dátum>
+        <Email-cím>user2@example.com</Email-cím>
+    </Felhasználó>
+
+    <Felhasználó felhasznalo_id="3">
+        <Felhasználónév>user3</Felhasználónév>
+        <Születési_dátum>1988-03-10</Születési_dátum>
+        <Email-cím>user3@example.com</Email-cím>
+    </Felhasználó>
+
+    <Felhasználó felhasznalo_id="4">
+        <Felhasználónév>user4</Felhasználónév>
+        <Születési_dátum>1995-12-05</Születési_dátum>
+        <Email-cím>user4@example.com</Email-cím>
+    </Felhasználó>
+
+    <!-- Megtekinti kapcsolótábla példányok -->
+    <Megtekinti film_id="1" felhasznalo_id="1"></Megtekinti>
+    <Megtekinti film_id="2" felhasznalo_id="2"></Megtekinti>
+    <Megtekinti film_id="3" felhasznalo_id="3"></Megtekinti>
+    <Megtekinti film_id="4" felhasznalo_id="4"></Megtekinti>
+
+    <!-- Színész példányok -->
+    <Színész szinesz_id="1">
+        <Név>
+            <Keresztnév>Leonardo</Keresztnév>
+            <Vezetéknév>DiCaprio</Vezetéknév>
+        </Név>
+        <Születési_dátum>1974-11-11</Születési_dátum>
+        <Születési_hely>Los Angeles, Kalifornia</Születési_hely>
+    </Színész>
+
+    <Színész szinesz_id="2">
+        <Név>
+            <Keresztnév>Morgan</Keresztnév>
+            <Vezetéknév>Freeman</Vezetéknév>
+        </Név>
+        <Születési_dátum>1937-06-01</Születési_dátum>
+        <Születési_hely>Memphis, Tennessee</Születési_hely>
+    </Színész>
+
+    <Színész szinesz_id="3">
+        <Név>
+            <Keresztnév>Sam</Keresztnév>
+            <Vezetéknév>Worthington</Vezetéknév>
+        </Név>
+        <Születési_dátum>1976-08-02</Születési_dátum>
+        <Születési_hely>Godalming, Egyesült Királyság</Születési_hely>
+    </Színész>
+
+    <!-- Szerepel példányok -->
+    <Szerepel szerepel_id="1" film_id="1" szinesz_id="1">
+        <Karakter_neve>Dominic Cobb</Karakter_neve>
+    </Szerepel>
+
+    <Szerepel szerepel_id="2" film_id="2" szinesz_id="2">
+        <Karakter_neve>Andy Dufresne</Karakter_neve>
+    </Szerepel>
+
+    <Szerepel szerepel_id="3" film_id="3" szinesz_id="3">
+        <Karakter_neve>Jake Sully</Karakter_neve>
+    </Szerepel>
+
+    <!-- Élettárs példányok -->
+    <Élettárs elettars_id="1" szinesz_id="1">
+        <Név>
+            <Keresztnév>Camila</Keresztnév>
+            <Vezetéknév>Morrone</Vezetéknév>
+        </Név>
+        <Születési_dátum>1997-06-16</Születési_dátum>
+        <Születési_hely>Buenos Aires, Argentina</Születési_hely>
+    </Élettárs>
+
+    <Élettárs elettars_id="2" szinesz_id="2">
+        <Név>
+            <Keresztnév>Myrna</Keresztnév>
+            <Vezetéknév>Colley-Lee</Vezetéknév>
+        </Név>
+        <Születési_dátum>1941-03-15</Születési_dátum>
+        <Születési_hely>Milwaukee, Wisconsin</Születési_hely>
+    </Élettárs>
+
+    <Élettárs elettars_id="3" szinesz_id="3">
+        <Név>
+            <Keresztnév>Lara</Keresztnév>
+            <Vezetéknév>Worthington</Vezetéknév>
+        </Név>
+        <Születési_dátum>1976-08-02</Születési_dátum>
+        <Születési_hely>Godalming, Egyesült Királyság</Születési_hely>
+    </Élettárs>
+
+    <!-- Díj példányok -->
+    <Díj dij_id="1">
+        <Díj_típusa>Oscar</Díj_típusa>
+        <Feltételek>Legjobb film</Feltételek>
+        <Nyertes>Christopher Nolan</Nyertes>
+        <Nyertes>Matthew McConaughey</Nyertes>
+    </Díj>
+
+    <Díj dij_id="2">
+        <Díj_típusa>Golden Globe</Díj_típusa>
+        <Feltételek>Legjobb színész</Feltételek>
+        <Nyertes>Leonardo DiCaprio</Nyertes>
+        <Nyertes>Tom Hanks</Nyertes>
+        <Nyertes>Emma Stone</Nyertes>
+    </Díj>
+
+    <Díj dij_id="3">
+        <Díj_típusa>BAFTA</Díj_típusa>
+        <Feltételek>Legjobb rendező</Feltételek>
+        <Nyertes>Alfonso Cuarón</Nyertes>
+        <Nyertes>Greta Gerwig</Nyertes>
+    </Díj>
+
+
+    <!-- Elnyeri kapcsolótábla példányok -->
+    <Elnyeri szinesz_id="1" dij_id="1"></Elnyeri>
+    <Elnyeri szinesz_id="2" dij_id="2"></Elnyeri>
+    <Elnyeri szinesz_id="3" dij_id="3"></Elnyeri>
+
+</Filmadatbázis>
