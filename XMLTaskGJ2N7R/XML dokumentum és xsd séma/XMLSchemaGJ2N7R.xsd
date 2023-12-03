@@ -21,7 +21,7 @@
     </xs:simpleType>
 
     <xs:simpleType name="PontszámType">
-        <xs:restriction base="xs:decimal">
+        <xs:restriction base="xs:float">
             <xs:minInclusive value="0" />
             <xs:maxInclusive value="10" />
         </xs:restriction>
