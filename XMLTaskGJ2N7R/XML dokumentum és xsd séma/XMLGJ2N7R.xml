@@ -13,7 +13,7 @@
     <Film film_id="2">
         <Cím>The Shawshank Redemption</Cím>
         <Kiadás_éve>1994</Kiadás_éve>
-        <Műfaj>Drama</Műfaj>
+        <Műfaj>Dráma</Műfaj>
     </Film>
 
     <Film film_id="3">
@@ -62,23 +62,23 @@
 
     <!-- Kategória példányok -->
     <Kategória kategoria_id="1">
-        <Név>Akció</Név>
+        <Kategória_név>Akció</Kategória_név>
         <Leírás>Izgalmas, pörgős jeleneteket tartalmazó filmek</Leírás>
     </Kategória>
 
     <Kategória kategoria_id="2">
-        <Név>Drama</Név>
+        <Kategória_név>Drama</Kategória_név>
         <Leírás>Mély érzelmekre épülő filmek</Leírás>
     </Kategória>
 
     <Kategória kategoria_id="3">
-        <Név>Sci-fi</Név>
+        <Kategória_név>Sci-fi</Kategória_név>
         <Leírás>Fantázia és tudományos elemeket tartalmazó filmek</Leírás>
     </Kategória>
 
     <!-- Tartozik kapcsolótábla példányok -->
-    <Tartozik tartozik_id="1" film_id="1" kategoria_id="3">
-        <Kategóriák_száma>1</Kategóriák_száma>
+    <Tartozik tartozik_id="1" film_id="1" kategoria_id="1">
+        <Kategóriák_száma>2</Kategóriák_száma>
     </Tartozik>
 
     <Tartozik tartozik_id="2" film_id="2" kategoria_id="2">
@@ -89,8 +89,8 @@
         <Kategóriák_száma>1</Kategóriák_száma>
     </Tartozik>
 
-    <Tartozik tartozik_id="4" film_id="4" kategoria_id="1">
-        <Kategóriák_száma>1</Kategóriák_száma>
+    <Tartozik tartozik_id="4" film_id="1" kategoria_id="1">
+        <Kategóriák_száma>2</Kategóriák_száma>
     </Tartozik>
 
     <!-- Felhasználó példányok -->
@@ -197,23 +197,23 @@
     <Díj dij_id="1">
         <Díj_típusa>Oscar</Díj_típusa>
         <Feltételek>Legjobb film</Feltételek>
-        <Nyertesek>Christopher Nolan</Nyertesek>
-        <Nyertesek>Matthew McConaughey</Nyertesek>
+        <Nyertes>Christopher Nolan</Nyertes>
+        <Nyertes>Matthew McConaughey</Nyertes>
     </Díj>
 
     <Díj dij_id="2">
         <Díj_típusa>Golden Globe</Díj_típusa>
         <Feltételek>Legjobb színész</Feltételek>
-        <Nyertesek>Leonardo DiCaprio</Nyertesek>
-        <Nyertesek>Tom Hanks</Nyertesek>
-        <Nyertesek>Emma Stone</Nyertesek>
+        <Nyertes>Leonardo DiCaprio</Nyertes>
+        <Nyertes>Tom Hanks</Nyertes>
+        <Nyertes>Emma Stone</Nyertes>
     </Díj>
 
     <Díj dij_id="3">
         <Díj_típusa>BAFTA</Díj_típusa>
         <Feltételek>Legjobb rendező</Feltételek>
-        <Nyertesek>Alfonso Cuarón</Nyertesek>
-        <Nyertesek>Greta Gerwig</Nyertesek>
+        <Nyertes>Alfonso Cuarón</Nyertes>
+        <Nyertes>Greta Gerwig</Nyertes>
     </Díj>
 
 

@@ -1,145 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <!-- Filmadatbázis komplex típus -->
+    <!-- Saját típusok létrehozása-->
+    <xs:simpleType name="MűfajType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Horror" />
+            <xs:enumeration value="Sci-fi" />
+            <xs:enumeration value="Dráma" />
+            <xs:enumeration value="Romantikus" />
+            <xs:enumeration value="Akció" />
+            <xs:enumeration value="Thriller" />
+            <xs:enumeration value="Musical" />
+            <xs:enumeration value="Vígjáték" />
+            <xs:enumeration value="Animáció" />
+            <xs:enumeration value="Krimi" />
+            <xs:enumeration value="Dokumentum" />
+            <xs:enumeration value="Fantasy" />
+            <xs:enumeration value="Történelmi" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PontszámType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Kategóriák_számaType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Egyszerű típusok létrehozása-->
+    <xs:element name="Születési_dátum" type="xs:string" />
+    <xs:element name="Születési_hely" type="xs:string" />
+
+    <!-- Komplex típusok létrehozása-->
+    <xs:complexType name="NévType">
+        <xs:sequence>
+            <xs:element name="Keresztnév" type="xs:string" />
+            <xs:element name="Vezetéknév" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FilmType">
+        <xs:sequence>
+            <xs:element name="Cím" type="xs:string" />
+            <xs:element name="Kiadás_éve" type="xs:gYear" />
+            <xs:element name="Műfaj" type="MűfajType" />
+        </xs:sequence>
+        <xs:attribute name="film_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="ÉrtékelésType">
+        <xs:sequence>
+            <xs:element name="Pontszám" type="PontszámType"/>
+            <xs:element name="Értékelések_száma" type="xs:string"/>
+            <xs:element name="Értékelés_szövege" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="ertekeles_id" type="xs:integer" use="required" />
+        <xs:attribute name="film_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="KategóriaType">
+        <xs:sequence>
+            <xs:element name="Kategória_név" type="xs:string"/>
+            <xs:element name="Leírás" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="kategoria_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="TartozikType">
+        <xs:sequence>
+            <xs:element name="Kategóriák_száma" type="Kategóriák_számaType" />
+        </xs:sequence>
+        <xs:attribute name="tartozik_id" type="xs:integer" use="required" />
+        <xs:attribute name="film_id" type="xs:integer" use="required" />
+        <xs:attribute name="kategoria_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="FelhasználóType">
+        <xs:sequence>
+            <xs:element name="Felhasználónév" type="xs:string" />
+            <xs:element ref="Születési_dátum" />
+            <xs:element name="Email-cím" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="felhasznalo_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="MegtekintiType">
+        <xs:attribute name="film_id" type="xs:integer" use="required" />
+        <xs:attribute name="felhasznalo_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="SzínészType">
+        <xs:sequence>
+            <xs:element name="Név" type="NévType">
+            </xs:element>
+            <xs:element ref="Születési_dátum" />
+            <xs:element ref="Születési_hely" />
+        </xs:sequence>
+        <xs:attribute name="szinesz_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="SzerepelType">
+        <xs:sequence>
+            <xs:element name="Karakter_neve" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="szerepel_id" type="xs:integer" use="required" />
+        <xs:attribute name="film_id" type="xs:integer" use="required" />
+        <xs:attribute name="szinesz_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="ÉlettársType">
+        <xs:sequence>
+            <xs:element name="Név" type="NévType"/>
+            <xs:element ref="Születési_dátum" />
+            <xs:element ref="Születési_hely" />
+        </xs:sequence>
+        <xs:attribute name="elettars_id" type="xs:integer" use="required" />
+        <xs:attribute name="szinesz_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="DíjType">
+        <xs:sequence>
+            <xs:element name="Díj_típusa" type="xs:string" />
+            <xs:element name="Feltételek" type="xs:string" />
+            <xs:element name="Nyertes" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="dij_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="ElnyeriType">
+        <xs:attribute name="szinesz_id" type="xs:integer" use="required" />
+        <xs:attribute name="dij_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+
+    <!-- Gyökérelem -->
     <xs:element name="Filmadatbázis">
         <xs:complexType>
             <xs:sequence>
-                <!-- Film példányok -->
-                <xs:element name="Film" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Cím" type="xs:string"/>
-                            <xs:element name="Kiadás_éve" type="xs:integer"/>
-                            <xs:element name="Műfaj" type="xs:string"/>
-                        </xs:sequence>
-                        <xs:attribute name="film_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Értékelés példányok -->
-                <xs:element name="Értékelés" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Pontszám" type="xs:decimal"/>
-                            <xs:element name="Értékelések_száma" type="xs:integer"/>
-                            <xs:element name="Értékelés_szövege" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                        <xs:attribute name="ertekeles_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="film_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Kategória példányok -->
-                <xs:element name="Kategória" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Név" type="xs:string"/>
-                            <xs:element name="Leírás" type="xs:string"/>
-                        </xs:sequence>
-                        <xs:attribute name="kategoria_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Tartozik kapcsolótábla példányok -->
-                <xs:element name="Tartozik" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Kategóriák_száma" type="xs:integer"/>
-                        </xs:sequence>
-                        <xs:attribute name="tartozik_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="film_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="kategoria_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Felhasználó példányok -->
-                <xs:element name="Felhasználó" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Felhasználónév" type="xs:string"/>
-                            <xs:element name="Születési_dátum" type="xs:date"/>
-                            <xs:element name="Email-cím" type="xs:string"/>
-                        </xs:sequence>
-                        <xs:attribute name="felhasznalo_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Megtekinti kapcsolótábla példányok -->
-                <xs:element name="Megtekinti" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:attribute name="film_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="felhasznalo_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Színész példányok -->
-                <xs:element name="Színész" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Név">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Keresztnév" type="xs:string"/>
-                                        <xs:element name="Vezetéknév" type="xs:string"/>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="Születési_dátum" type="xs:date"/>
-                            <xs:element name="Születési_hely" type="xs:string"/>
-                        </xs:sequence>
-                        <xs:attribute name="szinesz_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Szerepel példányok -->
-                <xs:element name="Szerepel" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:element name="Karakter_neve" type="xs:string"/>
-                        <xs:attribute name="szerepel_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="film_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="szinesz_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Élettárs példányok -->
-                <xs:element name="Élettárs" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:element name="Név">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Keresztnév" type="xs:string"/>
-                                    <xs:element name="Vezetéknév" type="xs:string"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="Születési_dátum" type="xs:date"/>
-                        <xs:element name="Születési_hely" type="xs:string"/>
-                        <xs:attribute name="elettars_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="szinesz_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Díj példányok -->
-                <xs:element name="Díj" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:element name="Díj_típusa" type="xs:string"/>
-                        <xs:element name="Feltételek" type="xs:string"/>
-                        <xs:element name="Nyertesek" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                        <xs:attribute name="dij_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
-                <!-- Elnyeri kapcsolótábla példányok -->
-                <xs:element name="Elnyeri" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:attribute name="szinesz_id" type="xs:integer" use="required"/>
-                        <xs:attribute name="dij_id" type="xs:integer" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-
+                <xs:element name="Film" type="FilmType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Értékelés" type="ÉrtékelésType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Kategória" type="KategóriaType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Tartozik" type="TartozikType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Felhasználó" type="FelhasználóType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Megtekinti" type="MegtekintiType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Színész" type="SzínészType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Szerepel" type="SzerepelType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Élettárs" type="ÉlettársType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Díj" type="DíjType" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Elnyeri" type="ElnyeriType" minOccurs="0" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
+
+        <!-- Elsődleges kulcsok-->
+        <xs:key name="film_key">
+            <xs:selector xpath="Film"></xs:selector>
+            <xs:field xpath="@film_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="ertekeles_key">
+            <xs:selector xpath="Értékelés"></xs:selector>
+            <xs:field xpath="@ertekeles_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="kategoria_key">
+            <xs:selector xpath="Kategória"></xs:selector>
+            <xs:field xpath="@kategoria_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="felhasznalo_key">
+            <xs:selector xpath="Felhasználó"></xs:selector>
+            <xs:field xpath="@felhasznalo_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="szinesz_key">
+            <xs:selector xpath="Színész"></xs:selector>
+            <xs:field xpath="@szinesz_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="elettars_key">
+            <xs:selector xpath="Élettárs"></xs:selector>
+            <xs:field xpath="@elettars_id"></xs:field>
+        </xs:key>
+
+        <xs:key name="dij_key">
+            <xs:selector xpath="Díj"></xs:selector>
+            <xs:field xpath="@dij_id"></xs:field>
+        </xs:key>
+
+        <!-- Idegen kulcsok -->
+        <xs:keyref name="ertekeles_film_kulcs" refer="film_key">
+            <xs:selector xpath="Értékelés" />
+            <xs:field xpath="@film_id" />
+        </xs:keyref>
+        <xs:keyref name="tartozik_film_kulcs" refer="film_key">
+            <xs:selector xpath="Tartozik" />
+            <xs:field xpath="@film_id" />
+        </xs:keyref>
+        <xs:keyref name="tartozik_kategoria_kulcs" refer="kategoria_key">
+            <xs:selector xpath="Tartozik" />
+            <xs:field xpath="@kategoria_id" />
+        </xs:keyref>
+        <xs:keyref name="megtekinti_felhasznalo_kulcs" refer="felhasznalo_key">
+            <xs:selector xpath="Megtekinti" />
+            <xs:field xpath="@felhasznalo_id" />
+        </xs:keyref>
+        <xs:keyref name="szerepel_szinesz_kulcs" refer="szinesz_key">
+            <xs:selector xpath="Szerepel" />
+            <xs:field xpath="@szinesz_id" />
+        </xs:keyref>
+
+        <xs:keyref name="szerepel_film_kulcs" refer="film_key">
+            <xs:selector xpath="Szerepel" />
+            <xs:field xpath="@szinesz_id" />
+        </xs:keyref>
+
+        <xs:keyref name="elettars_szinesz_kulcs" refer="szinesz_key">
+            <xs:selector xpath="Élettárs" />
+            <xs:field xpath="@szinesz_id" />
+        </xs:keyref>
+
+        <xs:keyref name="elnyeri_dij_kulcs" refer="dij_key">
+            <xs:selector xpath="Elnyeri" />
+            <xs:field xpath="@dij_id" />
+        </xs:keyref>
+
     </xs:element>
+
+
 
 </xs:schema>
