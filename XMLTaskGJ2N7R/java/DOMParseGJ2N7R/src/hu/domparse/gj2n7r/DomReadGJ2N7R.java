@@ -1,27 +1,19 @@
 package hu.domparse.gj2n7r;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Attr;
 
 public class DomReadGJ2N7R {
 
@@ -92,21 +84,45 @@ public class DomReadGJ2N7R {
                 //További gyerekelemek beolvasása
                 NodeList childNodes = childElement.getChildNodes();
                 boolean hasChildElements = false;
+                boolean hasText = false;
 
                 //Element gyerek csomópontjainak vizsgálása, van-e köztük Element
                 for(int j=0; j<childNodes.getLength(); j++){
                     if(childNodes.item(j).getNodeType() == Node.ELEMENT_NODE){
                         hasChildElements = true;
+                    }else if(childNodes.item(j).getNodeType() == Node.TEXT_NODE){
+                        hasText = true;
                     }
                 }
 
                 //Ha az Elementnek vannak további gyerekelemei
                 if(hasChildElements){   
-                    structure += "\n\t<" + childNode.getNodeName() + ">";
+                    structure += "\n\t<" + childNode.getNodeName();
+
+                    //Element attribútumainak lekérdezése és a struktúrához csatolása
+                    NamedNodeMap attributes = childNode.getAttributes();
+                    for(int j=0; j<attributes.getLength(); j++){
+                        Node attribute = attributes.item(j);
+
+                        structure+= " " + attribute;
+                    }
+
+                    structure += ">";
+
                     structure += appendChildNodes(childNodes);
                     structure += "\n\t</" + childNode.getNodeName() + ">\n";
-                }else { //Nincsenek további gyerekelemek; szöveg van
+                }else if(hasText){ //Nincsenek további gyerekelemek; szöveg van
                     structure += "\n\t\t<" + childElement.getNodeName() + ">" + childElement.getTextContent() + "</" + childElement.getNodeName() + ">";
+                }else{ //Az az eset, ha nincs se szöveg, se további gyerekelem
+                    structure += "\n\t<" + childNode.getNodeName();
+
+                    NamedNodeMap attributes = childNode.getAttributes();
+                    for(int j=0; j<attributes.getLength(); j++){
+                        Node attribute = attributes.item(j);
+
+                        structure+= " " + attribute;
+                    }
+                    structure += ">" + "</" + childNode.getNodeName() + ">";
                 }
 
 
