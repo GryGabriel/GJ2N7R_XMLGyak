@@ -29,7 +29,7 @@
 
     <!-- Értékelés példányok -->
     <Értékelés ertekeles_id="1" film_id="1">
-        <Pontszám>4.8</Pontszám>
+        <Pontszám>6.8</Pontszám>
         <Értékelések_száma>1500</Értékelések_száma>
         <Értékelés_szövege>Nagyon jó film, érdemes megnézni!</Értékelés_szövege>
         <Értékelés_szövege>Lenyűgöző képi világ!</Értékelés_szövege>
@@ -37,14 +37,14 @@
     </Értékelés>
 
     <Értékelés ertekeles_id="2" film_id="2">
-        <Pontszám>4.9</Pontszám>
+        <Pontszám>6.9</Pontszám>
         <Értékelések_száma>2000</Értékelések_száma>
         <Értékelés_szövege>Minden idők egyik legjobb filmje!</Értékelés_szövege>
         <Értékelés_szövege>Nagyon izgalmas történet!</Értékelés_szövege>
     </Értékelés>
 
     <Értékelés ertekeles_id="3" film_id="3">
-        <Pontszám>4.5</Pontszám>
+        <Pontszám>6.5</Pontszám>
         <Értékelések_száma>1200</Értékelések_száma>
         <Értékelés_szövege>Varázslatos filmélmény!</Értékelés_szövege>
         <Értékelés_szövege>Nagyszerű rendezés!</Értékelés_szövege>
@@ -52,7 +52,7 @@
     </Értékelés>
 
     <Értékelés ertekeles_id="4" film_id="4">
-        <Pontszám>4.7</Pontszám>
+        <Pontszám>6.7</Pontszám>
         <Értékelések_száma>1800</Értékelések_száma>
         <Értékelés_szövege>Nagyon élvezetes film!</Értékelés_szövege>
         <Értékelés_szövege>Izgalmas cselekmény!</Értékelés_szövege>
@@ -85,7 +85,7 @@
     </Tartozik>
 
     <Tartozik film_id="3" kategoria_id="3" tartozik_id="3">
-        <Kategóriák_száma>3</Kategóriák_száma>
+        <Kategóriák_száma>1</Kategóriák_száma>
     </Tartozik>
 
     <Tartozik film_id="1" kategoria_id="1" tartozik_id="4">
@@ -107,7 +107,7 @@
 
     <Felhasználó felhasznalo_id="3">
         <Felhasználónév>user3</Felhasználónév>
-        <Születési_dátum>1988-03-10</Születési_dátum>
+        <Születési_dátum>2000-05-29</Születési_dátum>
         <Email-cím>user3@example.com</Email-cím>
     </Felhasználó>
 
@@ -152,15 +152,15 @@
     </Színész>
 
     <!-- Szerepel példányok -->
-    <Szerepel film_id="1" szerepel_id="1" szinesz_id="1">
+    <Szerepel film_id="4" szerepel_id="1" szinesz_id="3">
         <Karakter_neve>Dominic Cobb</Karakter_neve>
     </Szerepel>
 
-    <Szerepel film_id="2" szerepel_id="2" szinesz_id="2">
+    <Szerepel film_id="1" szerepel_id="2" szinesz_id="2">
         <Karakter_neve>Andy Dufresne</Karakter_neve>
     </Szerepel>
 
-    <Szerepel film_id="3" szerepel_id="3" szinesz_id="3">
+    <Szerepel film_id="3" szerepel_id="3" szinesz_id="1">
         <Karakter_neve>Jake Sully</Karakter_neve>
     </Szerepel>
 
@@ -185,8 +185,8 @@
 
     <Élettárs elettars_id="3" szinesz_id="3">
         <Név>
-            <Keresztnév>Lara</Keresztnév>
-            <Vezetéknév>Worthington</Vezetéknév>
+            <Keresztnév>Sandra</Keresztnév>
+            <Vezetéknév>Bullock</Vezetéknév>
         </Név>
         <Születési_dátum>1976-08-02</Születési_dátum>
         <Születési_hely>Godalming, Egyesült Királyság</Születési_hely>
@@ -198,6 +198,7 @@
         <Feltételek>Legjobb film</Feltételek>
         <Nyertes>Christopher Nolan</Nyertes>
         <Nyertes>Matthew McConaughey</Nyertes>
+        <Nyertes>Csuja Imre</Nyertes>
     </Díj>
 
     <Díj dij_id="2">
@@ -206,6 +207,7 @@
         <Nyertes>Leonardo DiCaprio</Nyertes>
         <Nyertes>Tom Hanks</Nyertes>
         <Nyertes>Emma Stone</Nyertes>
+        <Nyertes>Csuja Imre</Nyertes>
     </Díj>
 
     <Díj dij_id="3">
@@ -213,12 +215,13 @@
         <Feltételek>Legjobb rendező</Feltételek>
         <Nyertes>Alfonso Cuarón</Nyertes>
         <Nyertes>Greta Gerwig</Nyertes>
+        <Nyertes>Csuja Imre</Nyertes>
     </Díj>
 
 
     <!-- Elnyeri kapcsolótábla példányok -->
-    <Elnyeri szinesz_id="1" dij_id="1"></Elnyeri>
-    <Elnyeri szinesz_id="2" dij_id="2"></Elnyeri>
-    <Elnyeri szinesz_id="3" dij_id="3"></Elnyeri>
+    <Elnyeri dij_id="1" szinesz_id="1" />
+    <Elnyeri dij_id="2" szinesz_id="2" />
+    <Elnyeri dij_id="3" szinesz_id="3" />
 
 </Filmadatbázis>

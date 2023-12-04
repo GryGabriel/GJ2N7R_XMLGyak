@@ -1,6 +1,7 @@
 package hu.domparse.gj2n7r;
 
 import java.io.File;
+import java.io.StringReader;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -8,6 +9,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -26,14 +28,9 @@ public class DomReadGJ2N7R {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dbBuilder = dbFactory.newDocumentBuilder();
             Document document = dbBuilder.parse(inputXML);
-            document.getDocumentElement().normalize();
-
-            //Dokumentum mentése új XML fájlba
-            saveXMLDocument(document, "XMLReadGJ2N7R.xml");
-
 
             //Kimeneti változó létrehozása
-            String documentStructure = "<?xml version=\"1.0\" encoding=\"UTF-8\">\n\n";
+            String documentStructure = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
 
             //Gyökérelem beolvasása
             Node rootElement = document.getDocumentElement();
@@ -51,6 +48,9 @@ public class DomReadGJ2N7R {
             documentStructure += "\n\n</" + rootElement.getNodeName() +  ">\n";
             System.out.println(documentStructure);
 
+            //Dokumentum mentése új XML fájlba
+            saveXMLDocument(documentStructure, "XMLReadGJ2N7R.xml");
+
 
 
         } catch(Exception e) {
@@ -59,13 +59,21 @@ public class DomReadGJ2N7R {
 
     }
 
-    private static void saveXMLDocument(Document document, String filePath) {
+    private static void saveXMLDocument(String structure, String filePath) {
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(document);
+
+            // StringReader létrehozása a struktúrának
+            StringReader stringReader = new StringReader(structure);
+            StreamSource source = new StreamSource(stringReader);
+
+            // StreamResult létrehozása a kimeneti fájlnak
             StreamResult result = new StreamResult(new File(filePath));
+
+            // Az XML string transformálása és mentése
             transformer.transform(source, result);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
