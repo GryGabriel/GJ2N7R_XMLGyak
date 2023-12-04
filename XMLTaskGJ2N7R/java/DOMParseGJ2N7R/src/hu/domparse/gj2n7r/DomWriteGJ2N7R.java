@@ -17,6 +17,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.util.Properties;
+import javax.xml.transform.OutputKeys;
+
 public class DomWriteGJ2N7R {
 
     public static void main(String[] args) throws ParserConfigurationException{
@@ -56,7 +59,7 @@ public class DomWriteGJ2N7R {
 
         //Értékelés Elemek létrehozása
         String[] rankIds = {"ertekeles_id", "film_id"};
-        String[] rankElementNames = {"Pontszám", "Értékelések_száma", "Értékelés_szöveg"};
+        String[] rankElementNames = {"Pontszám", "Értékelések_száma", "Értékelés_szövege"};
         String[][][] ranks = {
             {{"4.8"}, {"4.9"}, {"4.5"}, {"4.7"}},
             {{"2000"}, {"1500"}, {"1200"}, {"1800"}},
@@ -87,7 +90,7 @@ public class DomWriteGJ2N7R {
         //Tartozik komment hozzáadása
         text = document.createTextNode("\n");
         rootElement.appendChild(text);
-        text = document.createComment("Tartozik példányok");
+        text = document.createComment("Tartozik kapcsolótábla példányok");
         rootElement.appendChild(text);
         
         // Tartozik kapcsolótábla Elemek létrehozása
@@ -113,6 +116,12 @@ public class DomWriteGJ2N7R {
                 {{"user1@example.com"}, {"user2@example.com"}, {"user3@example.com"}, {"user4@example.com"}}
         };
         createElement(document, rootElement, "Felhasználó", userIds, users, userElementNames);
+
+        //Megtekinti komment hozzáadása
+        text = document.createTextNode("\n");
+        rootElement.appendChild(text);
+        text = document.createComment("Megtekinti kapcsolótábla példányok");
+        rootElement.appendChild(text);
 
         // Megtekinti kapcsolótábla Elemek létrehozása
         Element megtekinti1 = document.createElement("Megtekinti");
@@ -201,6 +210,12 @@ public class DomWriteGJ2N7R {
         };
         createElement(document, rootElement, "Díj", awardIds, awards, awardElementNames);
 
+        //Elnyeri komment hozzáadása
+        text = document.createTextNode("\n");
+        rootElement.appendChild(text);
+        text = document.createComment("Elnyeri kapcsolótábla példányok");
+        rootElement.appendChild(text);
+
         // Elnyeri kapcsolótábla Elemek létrehozása
         Element elnyeri1 = document.createElement("Elnyeri");
         elnyeri1.setAttribute("szinesz_id", "1");
@@ -219,7 +234,7 @@ public class DomWriteGJ2N7R {
 
         //XML fájl mentése
         document.getDocumentElement().normalize();
-        saveXMLDocument(document, "XMLGJ2N7R1.xml");
+        saveXMLDocument(document, "XML/XMLGJ2N7R1.xml");
     }
 
     public static void createElement(Document document, Element rootElement, String elementName, String[] ids, String[][][] elementValues, String[] elementNames){
@@ -251,17 +266,29 @@ public class DomWriteGJ2N7R {
             rootElement.appendChild(newElement);
         }
 
-        
-
     }
 
     public static void saveXMLDocument(Document document, String filePath) {
         try {
+            //Transformer létrehozása
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
+
+            //Új 'Properties' objektum létrehozása a dokumentum struktúrálása érdekében
+            Properties outputProperties = new Properties();
+            outputProperties.setProperty(OutputKeys.INDENT, "yes"); //Indent property beállítása 'yes'-re
+            outputProperties.setProperty("{http://xml.apache.org/xslt}indent-amount", "2"); //Szóköz beállítása 2-re
+            transformer.setOutputProperties(outputProperties); //Maga a formátozás
+
             DOMSource source = new DOMSource(document);
+
+            //Kiírás fájlba
             StreamResult result = new StreamResult(new File(filePath));
             transformer.transform(source, result);
+
+            //Kiírás a konzolra
+            StreamResult console = new StreamResult(System.out);
+            transformer.transform(source, console);
         } catch (Exception e) {
             e.printStackTrace();
         }

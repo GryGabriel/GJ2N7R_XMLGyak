@@ -49,7 +49,7 @@ public class DomReadGJ2N7R {
             System.out.println(documentStructure);
 
             //Dokumentum mentése új XML fájlba
-            saveXMLDocument(documentStructure, "XMLReadGJ2N7R.xml");
+            saveXMLDocument(documentStructure, "XML/XMLReadGJ2N7R.xml");
 
 
 
