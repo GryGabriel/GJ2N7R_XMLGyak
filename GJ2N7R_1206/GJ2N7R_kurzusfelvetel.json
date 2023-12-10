@@ -1,0 +1,93 @@
+{
+  "GJ2N7R_kurzusfelvetel": {
+    "kurzusok": {
+      "kurzus": [
+        {
+          "kurzusnev": "Valószínűségszámítás",
+          "kredit": 5,
+          "hely": "A1/320",
+          "idopont": "Hétfö, 10-12",
+          "oktató": "Dr. Fegyverneki Sándor"
+        },
+        {
+          "kurzusnev": "Valószínűségszámítás",
+          "kredit": 5,
+          "hely": "A1/312",
+          "idopont": "Szerda, 10-12",
+          "oktató": "Dr. Túri József"
+        },
+        {
+          "kurzusnev": "Mesterséges intelligencia",
+          "kredit": 5,
+          "hely": "XXXII. elöadó",
+          "idopont": "Kedd, 10-12",
+          "oktató": "Kunné Tamás Judit",
+          "óraadó": "Fazekas Levente"
+        },
+        {
+          "kurzusnev": "Mesterséges intelligencia",
+          "kredit": 5,
+          "hely": "III. elöadó",
+          "idopont": "Csütörtök, 10-12",
+          "oktató": "Fazekas Levente"
+        },
+        {
+          "kurzusnev": "Adatkezelés XML környezetben",
+          "kredit": 5,
+          "hely": "XXXII. elöadó",
+          "idopont": "Kedd, 12-14",
+          "oktató": "Bednarik László"
+        },
+        {
+          "kurzusnev": "Adatkezelés XML környezetben",
+          "kredit": 5,
+          "hely": "Inf/101",
+          "idopont": "Szerda, 12-14",
+          "oktató": "Bednarik László"
+        },
+        {
+          "kurzusnev": "Algoritmusok és vizsgálatuk",
+          "kredit": 5,
+          "hely": "A1/320",
+          "idopont": "Kedd, 14-16",
+          "oktató": "Házy Attila"
+        },
+        {
+          "kurzusnev": "Algoritmusok és vizsgálatuk",
+          "kredit": 5,
+          "hely": "A1/320",
+          "idopont": "Kedd, 16-18",
+          "oktató": "Házy Attila"
+        },
+        {
+          "kurzusnev": "Vállalati információs rendszerek fejlesztése",
+          "kredit": 5,
+          "hely": "Inf/101",
+          "idopont": "Szerda, 14-16",
+          "oktató": "Sasvári Péter"
+        },
+        {
+          "kurzusnev": "Vállalati információs rendszerek fejlesztése",
+          "kredit": 5,
+          "hely": "Inf/101",
+          "idopont": "Szerda, 18-20",
+          "oktató": "Sasvári Péter"
+        },
+        {
+          "kurzusnev": "Webtechnológiák",
+          "kredit": 5,
+          "hely": "A1/305",
+          "idopont": "Hétfő, 14-16",
+          "oktató": "Dr. Agárdi Anita"
+        },
+        {
+          "kurzusnev": "Webtechnológiák",
+          "kredit": 5,
+          "hely": "A1/305",
+          "idopont": "Hétfő, 16-18",
+          "oktató": "Dr. Agárdi Anita"
+        }
+      ]
+    }
+  }
+}

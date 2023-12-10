@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to HTML</title>
+</head>
+<body>
+
+<div id="courses-container"></div>
+
+<script>
+// JSON file beolvasása
+fetch('GJ2N7R_kurzusfelvetel.json')
+    .then(response => response.json())
+    .then(data => {
+
+        // Kurzusok lekérdezése tömbbe
+        const courses = data.GJ2N7R_kurzusfelvetel.kurzusok.kurzus;
+
+        // HTML elemek létrehozása
+        const coursesHTML = courses.map((course, index) => {
+            console.log((index+1) + ". kurzus")
+            console.log("Kurzusnév:" + course.kurzusnev)
+            console.log("Kredit:" + course.kredit)
+            console.log("Hely:" + course.hely)
+            console.log("Időpont:" + course.idopont)
+            console.log("Oktató:" + course.oktató)
+            return `
+                <div class="course">
+                    <h2>${course.kurzusnev}</h2>
+                    <p>Kredit: ${course.kredit}</p>
+                    <p>Hely: ${course.hely}</p>
+                    <p>Időpont: ${course.idopont}</p>
+                    <p>Oktató: ${course.oktató}</p>
+                    ${course.óraadó ? `<p>Óraadó: ${course.óraadó}</p>` : ''}
+                </div>
+            `;
+        }).join('');
+
+        // Létrehozott HTML csatolása a 'courses-container' elemhez
+        document.getElementById('courses-container').innerHTML = coursesHTML;
+    })
+    .catch(error => console.error('Error opening JSON:', error));
+</script>
+
+</body>
+</html>

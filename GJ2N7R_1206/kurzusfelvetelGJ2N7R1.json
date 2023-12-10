@@ -1,0 +1,100 @@
+{
+    "GJ2N7R_kurzusfelvetel": {
+        "kurzusok": {
+            "kurzus": [
+                {
+                    "hely": "A1-320",
+                    "idopont": "Hétfő, 10-12",
+                    "oktató": "Dr. Fegyverneki Sándor",
+                    "kredit": "5",
+                    "kurzusnev": "Valószínűségszámítás"
+                },
+                {
+                    "hely": "A1-320",
+                    "idopont": "Hétfő, 10-12",
+                    "oktató": "Dr. Túri József",
+                    "kredit": "5",
+                    "kurzusnev": "Valószínűségszámítás"
+                },
+                {
+                    "hely": "A1-312",
+                    "idopont": "Szerda, 10-12",
+                    "oktató": "Dr. Fegyverneki Sándor",
+                    "kredit": "5",
+                    "kurzusnev": "Valószínűségszámítás"
+                },
+                {
+                    "óraadó": "Fazekas Levente",
+                    "hely": "XXXII. előadó",
+                    "idopont": "Kedd, 10-12",
+                    "oktató": "Kunné Tamás Judit",
+                    "kredit": "5",
+                    "kurzusnev": "Mesterséges intelligencia"
+                },
+                {
+                    "hely": "III. előadó",
+                    "idopont": "Csütörtök, 10-12",
+                    "oktató": "Fazekas Levente",
+                    "kredit": "5",
+                    "kurzusnev": "Mesterséges intelligencia"
+                },
+                {
+                    "hely": "XXXII. előadó",
+                    "idopont": "Kedd, 12-14",
+                    "oktató": "Bednarik László",
+                    "kredit": "5",
+                    "kurzusnev": "Adatkezelés XML környezetben"
+                },
+                {
+                    "hely": "Inf-101",
+                    "idopont": "Szerda, 12-14",
+                    "oktató": "Bednarik László",
+                    "kredit": "5",
+                    "kurzusnev": "Adatkezelés XML környezetben"
+                },
+                {
+                    "hely": "A1-320",
+                    "idopont": "Kedd, 14-16",
+                    "oktató": "Házy Attila",
+                    "kredit": "5",
+                    "kurzusnev": "Algoritmusok és vizsgálatuk"
+                },
+                {
+                    "hely": "A1-320",
+                    "idopont": "Kedd, 16-18",
+                    "oktató": "Házy Attila",
+                    "kredit": "5",
+                    "kurzusnev": "Algoritmusok és vizsgálatuk"
+                },
+                {
+                    "hely": "Inf\/101",
+                    "idopont": "Szerda, 14-16",
+                    "oktató": "Sasvári Péter",
+                    "kredit": "5",
+                    "kurzusnev": "Vállalati információs rendszerek fejlesztése"
+                },
+                {
+                    "hely": "Inf\/101",
+                    "idopont": "Szerda, 18-20",
+                    "oktató": "Sasvári Péter",
+                    "kredit": "5",
+                    "kurzusnev": "Vállalati információs rendszerek fejlesztése"
+                },
+                {
+                    "hely": "A1-305",
+                    "idopont": "Hétfő, 14-16",
+                    "oktató": "Dr. Agárdi Anita",
+                    "kredit": "5",
+                    "kurzusnev": "Webtechnológiák"
+                },
+                {
+                    "hely": "A1-305",
+                    "idopont": "Hétfő, 16-18",
+                    "oktató": "Dr. Agárdi Anita",
+                    "kredit": "5",
+                    "kurzusnev": "Webtechnológiák"
+                }
+            ]
+        }
+    }
+}
