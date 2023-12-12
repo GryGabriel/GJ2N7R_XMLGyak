@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Filmadatbázis xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-    xs:noNamespaceSchemaLocation="../xsd/XMLSchemaGJ2N7R.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Filmadatbázis xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="../xsd/XMLSchemaGJ2N7R.xsd">
 
     <!-- Film példányok -->
     <Film film_id="1">
@@ -29,7 +27,7 @@
 
     <!-- Értékelés példányok -->
     <Értékelés ertekeles_id="1" film_id="1">
-        <Pontszám>6.8</Pontszám>
+        <Pontszám>5.8</Pontszám>
         <Értékelések_száma>1500</Értékelések_száma>
         <Értékelés_szövege>Nagyon jó film, érdemes megnézni!</Értékelés_szövege>
         <Értékelés_szövege>Lenyűgöző képi világ!</Értékelés_szövege>
@@ -37,14 +35,14 @@
     </Értékelés>
 
     <Értékelés ertekeles_id="2" film_id="2">
-        <Pontszám>6.9</Pontszám>
+        <Pontszám>5.9</Pontszám>
         <Értékelések_száma>2000</Értékelések_száma>
         <Értékelés_szövege>Minden idők egyik legjobb filmje!</Értékelés_szövege>
         <Értékelés_szövege>Nagyon izgalmas történet!</Értékelés_szövege>
     </Értékelés>
 
     <Értékelés ertekeles_id="3" film_id="3">
-        <Pontszám>6.5</Pontszám>
+        <Pontszám>5.5</Pontszám>
         <Értékelések_száma>1200</Értékelések_száma>
         <Értékelés_szövege>Varázslatos filmélmény!</Értékelés_szövege>
         <Értékelés_szövege>Nagyszerű rendezés!</Értékelés_szövege>
@@ -52,7 +50,7 @@
     </Értékelés>
 
     <Értékelés ertekeles_id="4" film_id="4">
-        <Pontszám>6.7</Pontszám>
+        <Pontszám>5.7</Pontszám>
         <Értékelések_száma>1800</Értékelések_száma>
         <Értékelés_szövege>Nagyon élvezetes film!</Értékelés_szövege>
         <Értékelés_szövege>Izgalmas cselekmény!</Értékelés_szövege>
@@ -85,7 +83,7 @@
     </Tartozik>
 
     <Tartozik film_id="3" kategoria_id="3" tartozik_id="3">
-        <Kategóriák_száma>1</Kategóriák_száma>
+        <Kategóriák_száma>3</Kategóriák_száma>
     </Tartozik>
 
     <Tartozik film_id="1" kategoria_id="1" tartozik_id="4">
@@ -118,10 +116,10 @@
     </Felhasználó>
 
     <!-- Megtekinti kapcsolótábla példányok -->
-    <Megtekinti felhasznalo_id="1" film_id="1" />
-    <Megtekinti felhasznalo_id="2" film_id="2" />
-    <Megtekinti felhasznalo_id="3" film_id="3" />
-    <Megtekinti felhasznalo_id="4" film_id="4" />
+    <Megtekinti felhasznalo_id="1" film_id="1"/>
+    <Megtekinti felhasznalo_id="2" film_id="2"/>
+    <Megtekinti felhasznalo_id="3" film_id="3"/>
+    <Megtekinti felhasznalo_id="4" film_id="4"/>
 
     <!-- Színész példányok -->
     <Színész szinesz_id="1">
@@ -152,15 +150,15 @@
     </Színész>
 
     <!-- Szerepel példányok -->
-    <Szerepel film_id="4" szerepel_id="1" szinesz_id="3">
+    <Szerepel film_id="4" szerepel_id="1" szinesz_id="1">
         <Karakter_neve>Dominic Cobb</Karakter_neve>
     </Szerepel>
 
-    <Szerepel film_id="1" szerepel_id="2" szinesz_id="2">
+    <Szerepel film_id="2" szerepel_id="2" szinesz_id="2">
         <Karakter_neve>Andy Dufresne</Karakter_neve>
     </Szerepel>
 
-    <Szerepel film_id="3" szerepel_id="3" szinesz_id="1">
+    <Szerepel film_id="3" szerepel_id="3" szinesz_id="3">
         <Karakter_neve>Jake Sully</Karakter_neve>
     </Szerepel>
 
@@ -198,8 +196,7 @@
         <Feltételek>Legjobb film</Feltételek>
         <Nyertes>Christopher Nolan</Nyertes>
         <Nyertes>Matthew McConaughey</Nyertes>
-        <Nyertes>Csuja Imre</Nyertes>
-    </Díj>
+    <Nyertes>Csuja Imre</Nyertes></Díj>
 
     <Díj dij_id="2">
         <Díj_típusa>Golden Globe</Díj_típusa>
@@ -207,21 +204,19 @@
         <Nyertes>Leonardo DiCaprio</Nyertes>
         <Nyertes>Tom Hanks</Nyertes>
         <Nyertes>Emma Stone</Nyertes>
-        <Nyertes>Csuja Imre</Nyertes>
-    </Díj>
+    <Nyertes>Csuja Imre</Nyertes></Díj>
 
     <Díj dij_id="3">
         <Díj_típusa>BAFTA</Díj_típusa>
         <Feltételek>Legjobb rendező</Feltételek>
         <Nyertes>Alfonso Cuarón</Nyertes>
         <Nyertes>Greta Gerwig</Nyertes>
-        <Nyertes>Csuja Imre</Nyertes>
-    </Díj>
+    <Nyertes>Csuja Imre</Nyertes></Díj>
 
 
     <!-- Elnyeri kapcsolótábla példányok -->
-    <Elnyeri dij_id="1" szinesz_id="1" />
-    <Elnyeri dij_id="2" szinesz_id="2" />
-    <Elnyeri dij_id="3" szinesz_id="3" />
+    <Elnyeri dij_id="1" szinesz_id="1"/>
+    <Elnyeri dij_id="2" szinesz_id="2"/>
+    <Elnyeri dij_id="3" szinesz_id="3"/>
 
 </Filmadatbázis>

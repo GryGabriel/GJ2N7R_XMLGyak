@@ -27,7 +27,7 @@ public class DomModifyGJ2N7R {
     public static void main(String[] args){
         try {
 
-            String filePath = "XML/XMLGJ2N7RModify.xml";
+            String filePath = "XML/XMLGJ2N7R.xml";
             File inputFile = new File(filePath);
             
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -39,7 +39,8 @@ public class DomModifyGJ2N7R {
             modifyXMLFile(document);
 
             //XML fájl mentése
-            saveXMLDocument(document, filePath);
+            String newFilePath = "XML/XMLGJ2N7RModify.xml";
+            saveXMLDocument(document, newFilePath);
 
             document.getDocumentElement().normalize();
             
@@ -55,7 +56,7 @@ public class DomModifyGJ2N7R {
             XPath xPath = xPathFactory.newXPath();
 
             //1. Minden értékelés pontszámának növelése egy ponttal
-            System.out.println("Minden értékelés pontszámának növelése egy ponttal!");
+            System.out.println("\n1. Minden értékelés pontszámának növelése egy ponttal!");
             XPathExpression expression = xPath.compile("//Értékelés/Pontszám");
             NodeList Pontszámok = (NodeList) expression.evaluate(document, XPathConstants.NODESET);
 
@@ -65,7 +66,7 @@ public class DomModifyGJ2N7R {
                 //Előzetes pontszám lekérdezése és kiíratása
                 String pontszám = Pontszám.getTextContent().trim();
 
-                System.out.println("A(z) " + (i+1) + ". jelenglegi pontszám: " + pontszám);
+                System.out.println("A(z) " + (i+1) + ". jelenlegi pontszám: " + pontszám);
                 
                 //A pontszám konvertálása Double-re
                 double currentValue = 0;
@@ -82,7 +83,7 @@ public class DomModifyGJ2N7R {
             }
 
             // 2. A díjak nyerteseihez egy-egy új Nyertes hozzáadása
-            System.out.println("Minden díj nyerteséhez Csuja Imre hozzáadása!");
+            System.out.println("\n2. Minden díj nyerteséhez Csuja Imre hozzáadása!");
             XPathExpression expression2 = xPath.compile("//Díj");
             NodeList awards = (NodeList) expression2.evaluate(document, XPathConstants.NODESET);
 
@@ -90,7 +91,7 @@ public class DomModifyGJ2N7R {
                 Element award = (Element) awards.item(i);
 
                 //A díj Element meglévő struktúra kiíratása kiíratása
-                System.out.println("A díj elem módosítás előtt:");
+                System.out.println("A " + (i+1) + ". díj elem módosítás előtt:");
                 consoleNodes(award);
 
                 //Új nyertes létrehozása
@@ -100,13 +101,13 @@ public class DomModifyGJ2N7R {
                 award.appendChild(newWinner);
 
                 //Új díj Element új struktúra kiíratása
-                System.out.println("A díj elem módosítás után:");
+                System.out.println("A " + (i+1) + ". díj elem módosítás után:");
                 consoleNodes(award);
                 
             }
 
             // 3. 'Lara Worthington' nevű élettárs csere 'Sandra Bullock'-ra
-            System.out.println("'Lara Worthington' nevű élettárs csere 'Sandra Bullock'-ra");
+            System.out.println("\n3. 'Lara Worthington' nevű élettárs csere 'Sandra Bullock'-ra");
             XPathExpression expression3 = xPath.compile("//Élettárs");
             NodeList Partners = (NodeList) expression3.evaluate(document, XPathConstants.NODESET);
 
@@ -138,7 +139,7 @@ public class DomModifyGJ2N7R {
             }
 
             // 4. A második filmre mutató 'Szerepel' Elementek első egyedének, a színészre mutató idegen kulcsának megváltoztatása a 4-esre
-            System.out.println("A második filmre mutató 'Szerepel' Elementek első egyedének, a színészre mutató idegen kulcsának megváltoztatása a 4-esre");
+            System.out.println("\n4. A második filmre mutató 'Szerepel' Elementek első egyedének, a színészre mutató idegen kulcsának megváltoztatása a 4-esre");
             XPathExpression expression4 = xPath.compile("//Szerepel[@szerepel_id='1']");
             Node plays = (Node) expression4.evaluate(document, XPathConstants.NODE);
 
@@ -159,7 +160,7 @@ public class DomModifyGJ2N7R {
             
 
             // 5. A 'user3' nevú felhasználó születési dátumának megváltoztatása
-            System.out.println("A 'user3' nevú felhasználó születési dátumának megváltoztatása");
+            System.out.println("\n5. A 'user3' nevú felhasználó születési dátumának megváltoztatása");
             XPathExpression expression5 = xPath.compile("//Felhasználó[Felhasználónév='user3']/Születési_dátum");
             Node userDateOfBirth = (Node) expression5.evaluate(document, XPathConstants.NODE);
 

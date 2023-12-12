@@ -104,7 +104,20 @@ public class DomReadGJ2N7R {
                 }
 
                 //Ha az Elementnek vannak további gyerekelemei
-                if(hasChildElements){   
+                if(hasChildElements){
+                    if(childNode.getNodeName().equals("Név")){
+                        structure += "\n\t\t<" + childNode.getNodeName() + ">";
+                        NodeList childNodesOfName = childNode.getChildNodes();
+                        
+                        Node nameChild = childNodesOfName.item(1);
+                        structure += "\n\t\t\t<Keresztnév>" + nameChild.getTextContent() + "</Keresztnév>";
+                        
+                        nameChild = childNodesOfName.item(3);
+                        structure += "\n\t\t\t<Vezetéknév>" + nameChild.getTextContent() + "</Vezetéknév>";
+
+                        structure += "\n\t\t</" + childNode.getNodeName() + ">";
+                        continue;
+                    }
                     structure += "\n\t<" + childNode.getNodeName();
 
                     //Element attribútumainak lekérdezése és a struktúrához csatolása

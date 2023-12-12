@@ -97,7 +97,7 @@ public class DomWriteGJ2N7R {
         String[] belongsIds = {"film_id", "kategoria_id", "tartozik_id"};
         String[] belongsElementNames = {"Kategóriák_száma"};
         String[][][] belongs = {
-                {{"2"}, {"1"}, {"3"}, {"4"}}
+                {{"2"}, {"1"}, {"3"}}
         };
         createElement(document, rootElement, "Tartozik", belongsIds, belongs, belongsElementNames);
 
@@ -184,7 +184,7 @@ public class DomWriteGJ2N7R {
         String[] partnerIds = {"elettars_id", "szinesz_id"};
         String[] partnerElementNames = {"Név", "Születési_dátum", "Születési_hely"};
         String[][][] partners = {
-                {{"Camila", "Morrone"},{"Myrna", "Colley-Lee"},{"Lara", "Washington"}},
+                {{"Camila", "Morrone"}, {"Myrna", "Colley-Lee"}, {"Lara", "Washington"}},
                 {{"1997-06-16"},{"1941-03-15"},{"1976-08-02"}},
                 {{"Buenos Aires, Argentina"},{"Milwaukee, Wisconsin"},{"Godalming, Egyesült Királyság"}}
         };
@@ -257,9 +257,19 @@ public class DomWriteGJ2N7R {
                 //Hányszor fordulnak elő a gyerekelemek
                 for(int k=0; k< elementValues[j][i].length; k++){
                     Element newChildElement = document.createElement(elementNames[j]);
-                    newChildElement.setTextContent(elementValues[j][i][k]);
-
-                    newElement.appendChild(newChildElement);
+                    if(elementNames[j].equals("Név")){
+                        Element childOneOfName = document.createElement("Keresztnév");
+                        childOneOfName.setTextContent(elementValues[j][i][0]);
+                        newChildElement.appendChild(childOneOfName);
+                        Element childTwoOfName = document.createElement("Vezetéknév");
+                        childTwoOfName.setTextContent(elementValues[j][i][1]);
+                        newChildElement.appendChild(childTwoOfName);
+                        newElement.appendChild(newChildElement);
+                        break;
+                    }else{
+                        newChildElement.setTextContent(elementValues[j][i][k]);
+                        newElement.appendChild(newChildElement);
+                    }
                 }               
             }
 

@@ -231,6 +231,12 @@
             <xs:field xpath="@dij_id" />
         </xs:keyref>
 
+        <!-- 1:1 kapcsolat -->
+        <xs:unique name="elettars_szinesz_kapcsolat">
+            <xs:selector xpath="Elnyeri"/>
+            <xs:field xpath="@szinesz_id"/>
+        </xs:unique>
+
     </xs:element>
 
 </xs:schema>

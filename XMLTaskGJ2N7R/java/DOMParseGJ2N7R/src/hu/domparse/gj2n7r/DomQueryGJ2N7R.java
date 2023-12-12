@@ -74,13 +74,20 @@ public class DomQueryGJ2N7R {
         }
         
         //Az eredmény kiíratása
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("1. Az első értékeléshez tartozó szövegek számának kiíratása:");
         System.out.println("Az első 'Értékelés' elem " + textCounter + " darab szöveges értékelést tartalmaz");
+        System.out.println("-----------------------------------------------------------");
     }
 
     //2. Az 1900 előtt született felhasználók felhasználónevének kiíratása
     public static void bornBefore1900(Element rootElement){
         //Felhasználók lekérdezése listába
         NodeList users = rootElement.getElementsByTagName("Felhasználó");
+
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("2. Az 1900 előtt született felhasználók felhasználónevének kiíratása:");
+
 
         //Felhasználók születési dátumának megvizsgálása egyenként
         for(int i=0; i< users.getLength(); i++){
@@ -113,11 +120,15 @@ public class DomQueryGJ2N7R {
                 }
             }
         }
+        System.out.println("-----------------------------------------------------------");
     }
 
     //3. Amelyik filmhez több mint egy kategória tartozik, annak a filmnek a neve kiíratásra kerül
     public static void mostCategoryMovie(Element rootElement){
         NodeList belong = rootElement.getElementsByTagName("Tartozik");
+
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("3. Amelyik filmhez több mint egy kategória tartozik, annak a filmnek a neve kiíratásra kerül");
 
         //Kategória számláló tömb létrehozása
         int[] categoryCounter = new int[belong.getLength()];
@@ -194,6 +205,7 @@ public class DomQueryGJ2N7R {
 
             }
         }
+        System.out.println("-----------------------------------------------------------");
     }
 
     //4. A legjobb értékeléssel rendelkező film neve kerül kiíratása
@@ -246,6 +258,9 @@ public class DomQueryGJ2N7R {
             }
         }
 
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("4. A legjobb értékeléssel rendelkező film neve kerül kiíratása");
+
         //Film elemek lekérdezése
         NodeList movies = rootElement.getElementsByTagName("Film");
 
@@ -271,6 +286,8 @@ public class DomQueryGJ2N7R {
             }
 
         }
+
+        System.out.println("-----------------------------------------------------------");
         
     }
 
@@ -318,7 +335,10 @@ public class DomQueryGJ2N7R {
                     Node awardChild = award.getChildNodes().item(j);
 
                     if(awardChild.getNodeName().equals("Díj_típusa")){
+                        System.out.println("-----------------------------------------------------------");
+                        System.out.println("5. A legtöbbszór kiosztott díj neve kerül kiíratásra");
                         System.out.println("A legtöbbször kiosztott díj neve: " + awardChild.getTextContent());
+                        System.out.println("-----------------------------------------------------------");
                     }
                 }
             }

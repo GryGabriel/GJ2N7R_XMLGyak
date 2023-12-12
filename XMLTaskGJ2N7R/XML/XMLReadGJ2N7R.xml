@@ -121,31 +121,28 @@
 	<Megtekinti felhasznalo_id="4" film_id="4"/>
 	<!-- Színész példányok -->
 	<Színész szinesz_id="1">
-	<Név>
-		<Keresztnév>Leonardo</Keresztnév>
-		<Vezetéknév>DiCaprio</Vezetéknév>
-	</Név>
-
+		<Név>
+			<Keresztnév>Leonardo</Keresztnév>
+			<Vezetéknév>DiCaprio</Vezetéknév>
+		</Név>
 		<Születési_dátum>1974-11-11</Születési_dátum>
 		<Születési_hely>Los Angeles, Kalifornia</Születési_hely>
 	</Színész>
 
 	<Színész szinesz_id="2">
-	<Név>
-		<Keresztnév>Morgan</Keresztnév>
-		<Vezetéknév>Freeman</Vezetéknév>
-	</Név>
-
+		<Név>
+			<Keresztnév>Morgan</Keresztnév>
+			<Vezetéknév>Freeman</Vezetéknév>
+		</Név>
 		<Születési_dátum>1937-06-01</Születési_dátum>
 		<Születési_hely>Memphis, Tennessee</Születési_hely>
 	</Színész>
 
 	<Színész szinesz_id="3">
-	<Név>
-		<Keresztnév>Sam</Keresztnév>
-		<Vezetéknév>Worthington</Vezetéknév>
-	</Név>
-
+		<Név>
+			<Keresztnév>Sam</Keresztnév>
+			<Vezetéknév>Worthington</Vezetéknév>
+		</Név>
 		<Születési_dátum>1976-08-02</Születési_dátum>
 		<Születési_hely>Godalming, Egyesült Királyság</Születési_hely>
 	</Színész>
@@ -165,31 +162,28 @@
 
 	<!-- Élettárs példányok -->
 	<Élettárs elettars_id="1" szinesz_id="1">
-	<Név>
-		<Keresztnév>Camila</Keresztnév>
-		<Vezetéknév>Morrone</Vezetéknév>
-	</Név>
-
+		<Név>
+			<Keresztnév>Camila</Keresztnév>
+			<Vezetéknév>Morrone</Vezetéknév>
+		</Név>
 		<Születési_dátum>1997-06-16</Születési_dátum>
 		<Születési_hely>Buenos Aires, Argentina</Születési_hely>
 	</Élettárs>
 
 	<Élettárs elettars_id="2" szinesz_id="2">
-	<Név>
-		<Keresztnév>Myrna</Keresztnév>
-		<Vezetéknév>Colley-Lee</Vezetéknév>
-	</Név>
-
+		<Név>
+			<Keresztnév>Myrna</Keresztnév>
+			<Vezetéknév>Colley-Lee</Vezetéknév>
+		</Név>
 		<Születési_dátum>1941-03-15</Születési_dátum>
 		<Születési_hely>Milwaukee, Wisconsin</Születési_hely>
 	</Élettárs>
 
 	<Élettárs elettars_id="3" szinesz_id="3">
-	<Név>
-		<Keresztnév>Lara</Keresztnév>
-		<Vezetéknév>Worthington</Vezetéknév>
-	</Név>
-
+		<Név>
+			<Keresztnév>Lara</Keresztnév>
+			<Vezetéknév>Worthington</Vezetéknév>
+		</Név>
 		<Születési_dátum>1976-08-02</Születési_dátum>
 		<Születési_hely>Godalming, Egyesült Királyság</Születési_hely>
 	</Élettárs>
